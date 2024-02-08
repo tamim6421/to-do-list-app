@@ -7,9 +7,8 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SocialLogin from "../../SocialLogin/SocialLogin";
 
-// import login from "../../assets/login1.json";
-// import Lottie from "lottie-react";
-// import Title from "../../Components/Title/Title";
+
+import login from "../../assets/login.svg";
 
 const Register = () => {
   const { createUser, handleUpdateProfile } = useContext(AuthContext);
@@ -23,9 +22,10 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const check = event.target.check.checked;
 
-    console.log(name, email, password, photo, check);
+    // const check = event.target.check.checked;
+
+    // console.log(name, email, password, photo, check);
     // if (password.length < 6) {
     //   toast.error("Password mast be at 6 character");
     //   return;
@@ -54,11 +54,11 @@ const Register = () => {
           };
 
           console.log(userInfo);
-          
-           // Set user information in localStorage
-    localStorage.setItem('userInfo', JSON.stringify(userInfo));
-          event.target.reset();
 
+          // Set user information in localStorage
+          localStorage.setItem("userInfo", JSON.stringify(userInfo));
+          event.target.reset();
+          toast.success("Register Successfull")
           console.log(user);
           navigate("/");
         });
@@ -69,11 +69,15 @@ const Register = () => {
       });
   };
   return (
-    <div className="container ">
+    <div className="container mx-auto ">
       <div className="overly">
-        <div className="hero min-h-screen bg-green-50">
+        <div className="hero  bg-green-50">
           <div className="hero-content flex-col lg:flex-row-reverse ">
-            <div className="card flex-shrink-0 w-full max-w-sm  mt-20 ">
+
+            <div>
+              <img src={login} alt="" />
+            </div>
+            <div className="card flex-shrink-0 w-full max-w-sm  ">
               <p className="text-center text-3xl font-bold text-orange-400 drop-shadow-lg">
                 Register Now
               </p>

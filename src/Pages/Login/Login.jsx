@@ -4,12 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FaEye,FaEyeSlash  } from "react-icons/fa";
 import toast from 'react-hot-toast';
-// import Lottie from "lottie-react";
-// import Title from "../../Components/Title/Title";
-
 
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SocialLogin from "../../SocialLogin/SocialLogin";
+import login from "../../assets/login.svg"
 
 const Login = () => {
     const{signInUser} = useContext(AuthContext)
@@ -61,15 +59,17 @@ const Login = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container bg-green-50 mx-auto">
         <div className="overly">
    
         <div className="hero  min-h-screen">
-           <div className="hero-content flex-col  lg:flex-row-reverse bg-green-50">
+           <div className="hero-content flex-col  lg:flex-row-reverse ">
              <div className="text-center lg:text-left">
              
                <p className="">
-                <img src="https://i.ibb.co/KsC2cbt/Rectangle-2-4.png" alt="" />
+                <img 
+                className="w-3/4 mx-auto"
+                src={login} alt="" />
                </p>
              </div>
              <div className="card flex-shrink-0 w-full max-w-sm ">

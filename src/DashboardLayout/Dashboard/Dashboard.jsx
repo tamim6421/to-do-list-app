@@ -7,8 +7,8 @@ import useAuth from "../../Hooks/useAuth";
 const Dashboard = () => {
   const { user } = useAuth()
   return (
-    <div className="flex flex-col  md:flex-row">
-      <div className="flex-[1] md:w-[190px]  md:fixed md:z-10 md:h-[100vh]  bg-base-100 shadow-lg">
+    <div className="flex flex-col max-w-[1250px] mx-auto md:flex-row">
+      <div className="flex-[1] md:w-[190px]  md:fixed md:z-10 md:h-[100vh]  bg-base-100 border border-gray-100 shadow-lg">
         <div className="h-[180px] bg-green-500 p-2 pt-10">
           <div className="avatar flex justify-center items-center ">
             <div className="w-20 rounded-full">

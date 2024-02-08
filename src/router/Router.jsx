@@ -7,6 +7,7 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import Dashboard from "../DashboardLayout/Dashboard/Dashboard";
 import DashboardHome from "../DashboardLayout/DashboardHome/DashboardHome";
 import TaskFrom from "../DashboardLayout/TaskForm/TaskFrom";
+import Contact from "../Pages/Contact/Contact";
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         {
             path: '/register',
             element:<Register></Register>
+        },
+        {
+            path: '/contact',
+            element:<Contact></Contact>
         }
     ]
   },

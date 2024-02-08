@@ -24,7 +24,7 @@ const SocialLogin = () => {
             console.log(userInfo)
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
           
-                navigate('/')
+                navigate('/dashboard')
            
         })
     }

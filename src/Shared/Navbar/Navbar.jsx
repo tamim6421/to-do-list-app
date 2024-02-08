@@ -61,7 +61,7 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          to="contact"
+          to="/contact"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -107,7 +107,7 @@ const Navbar = () => {
             <button className=" normal-case px-4  font-extrabold text-2xl">
               <h1 className="text-orange-400 flex justify-center items-center gap-1">
                 <img className="w-6 h-6" src={image} alt="" />
-                Task.io
+                TODO.io
               </h1>
             </button>
           </Link>
@@ -179,7 +179,7 @@ const Navbar = () => {
                   <li className="w-full">
                     <button
                       onClick={logOut}
-                      className="btn btn-sm text-white  w-full bg-green-400"
+                      className="btn btn-sm text-white  w-full bg-red-400 hover:bg-red-600 bg:text-white"
                     >
                       {" "}
                       LogOut{" "}

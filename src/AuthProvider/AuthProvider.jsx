@@ -44,26 +44,12 @@ const AuthProvider = ({children}) => {
 
     useEffect( () =>{
         const unSubscribe = onAuthStateChanged(auth, currentUser =>{
-            // const userEmail = currentUser?.email || user?.email
-            // const currentEmail = {email: userEmail}
 
             console.log('current user', currentUser)
             setLoading(false)
             setUser(currentUser)
 
-            // if(currentUser){
-               
-            //     axios.post('https://job-fair-server.vercel.app/jwt', currentEmail, {withCredentials: true})
-            //     .then(res =>{
-            //         console.log('token response' ,res.data)
-            //     })
-            // }
-            // else{
-            //     axios.post('https://job-fair-server.vercel.app/logout', currentEmail, {withCredentials: true})
-            //     .then(res =>{
-            //         console.log(res.data)
-            //     })
-            // }
+        
 
 
 

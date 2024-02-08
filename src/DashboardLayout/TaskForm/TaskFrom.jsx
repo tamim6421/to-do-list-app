@@ -1,44 +1,24 @@
-import { useForm } from "react-hook-form"
-
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import { useContext } from "react";
-import useAuth from "../../Hooks/useAuth";
-
+import { useForm } from "react-hook-form";
 
 const TaskFrom = () => {
-    const {user} = useAuth()
-    const { register, handleSubmit  } = useForm();
+  const { register, handleSubmit } = useForm();
 
+  const onSubmit = async (data) => {
+    console.log(data);
 
-    
   
-    const onSubmit = async (data) => {
-      console.log(data);
+  };
 
-          // now send the menu item data send the database 
-          const taskItem = {
-              title: data.title,
-              priority: data.priority,
-              deadline: data.deadline,
-              description: data.description,
-              email: user?.email,
-              userName: user?.displayName,
-              photo: user?.photoURL 
-              
-          }
-   
-    };
-  
-    
-
-
-    return (
-        <div className="px-28 bg-green-50 py-5 pt-10 mb-10 ">
-        <h1 className="text-center text-orange-400 text-2xl font-bold drop-shadow-xl ">Added task</h1>
+  return (
+    <div className="px-28 bg-green-50 shadow-md py-5 pt-10 mb-10 ">
+      <h1 className="text-center text-orange-400 text-2xl font-bold drop-shadow-xl ">
+        Added task
+      </h1>
       <div className="w-3/4 mx-auto">
-        <form className="shadow-xl rounded-lg p-3 w-3/4 mx-auto  pb-7" onSubmit={handleSubmit(onSubmit)}>
-
+        <form
+          className="shadow-xl rounded-lg p-3 w-3/4 mx-auto  pb-7"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           {/* recipe name  */}
 
           <div className="form-control w-full my-7">
@@ -53,7 +33,6 @@ const TaskFrom = () => {
             />
           </div>
 
-
           <div className=" md:flex gap-8 justify-center items-center">
             {/* category section  */}
             <div className="form-control w-full my-7">
@@ -61,17 +40,16 @@ const TaskFrom = () => {
                 <span className="label-text">Task Priority</span>
               </label>
               <select
-              defaultValue='default'
+                defaultValue="default"
                 {...register("priority", { required: true })}
                 className="select select-bordered w-full "
               >
-                <option disabled value="default" >
+                <option disabled value="default">
                   Priority
                 </option>
                 <option value="low">Low</option>
                 <option value="moderate">Moderate</option>
                 <option value="high">High</option>
-             
               </select>
             </div>
 
@@ -90,22 +68,25 @@ const TaskFrom = () => {
             </div>
           </div>
 
-            {/* recipe details  */}
-            <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Task Description</span>
-                   
-                </label>
-                <textarea {...register("description", { required: true })} className="textarea textarea-bordered h-24" placeholder="Text here"></textarea>
-               
-                </div>
+          {/* recipe details  */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Task Description</span>
+            </label>
+            <textarea
+              {...register("description", { required: true })}
+              className="textarea textarea-bordered h-24"
+              placeholder="Text here"
+            ></textarea>
+          </div>
 
-
-                    <button className="btn bg-orange-400 text-white block mx-auto hover:bg-orange-600 drop-shadow-lg px-8 mt-5">Add Task</button>
+          <button className="btn bg-orange-400 text-white block mx-auto hover:bg-orange-600 drop-shadow-lg px-8 mt-5">
+            Add Task
+          </button>
         </form>
       </div>
     </div>
-    );
+  );
 };
 
 export default TaskFrom;
