@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link, NavLink } from "react-router-dom";
 
 import { useContext, useEffect, useState } from "react";
@@ -57,20 +58,7 @@ const Navbar = () => {
           Dashboard
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="postTask"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-green-500 text-lg  font-semibold"
-              : "hover:bg-green-100   text-lg"
-          }
-        >
-          Post Task
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           to="contact"

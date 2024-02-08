@@ -3,6 +3,10 @@ import MainLayout from "../MainLayout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import Dashboard from "../DashboardLayout/Dashboard/Dashboard";
+import DashboardHome from "../DashboardLayout/DashboardHome/DashboardHome";
+import TaskFrom from "../DashboardLayout/TaskForm/TaskFrom";
 
 
 const router = createBrowserRouter([
@@ -24,6 +28,20 @@ const router = createBrowserRouter([
         }
     ]
   },
+  {
+    path:'dashboard',
+    element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
+    children: [
+        {
+           path:'',
+           element: <DashboardHome></DashboardHome>
+        },
+        {
+            path: 'taskForm',
+            element: <TaskFrom></TaskFrom>
+        }
+    ]
+}
 ]);
 
 export default router;

@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
-        <div className=" mt-28 max-w-[1250] mx-auto shadow-md flex px-5 md:px-10 flex-col md:flex-row md:h-[600px]">
+        <div className=" mt-28 max-w-[1250px] mx-auto  flex px-5 md:px-10 flex-col md:flex-row md:h-[600px]">
             <div className='flex-[1] p-3'>
                 <p 
                
